@@ -47,8 +47,6 @@ export default function Profile() {
     const [username, setUsername] = useState('')
     const [popoverOpened, setPopoverOpened] = useState(false)
 
-    console.log(session)
-
     const form = useForm({
         initialValues: {
             username: username,
@@ -80,8 +78,6 @@ export default function Profile() {
         return (
             <Box maw={300} mx="auto">
                 <form onSubmit={form.onSubmit((values) => {
-                    console.log(values)
-
                     const newValues = {
                         ...values,
                         id: session.data.user.id
@@ -121,7 +117,6 @@ export default function Profile() {
                             autoComplete="off"
                             onFocus={(event) => {
                                 event.target.setAttribute('autocomplete', 'off')
-                                console.log(event.target.autocomplete)
                             }}
                             type="search"
                         />

@@ -109,11 +109,9 @@ export default function Create({foodTrucks}) {
             return (
                 <Box maw={300} mx="auto">
                     <form onSubmit={form.onSubmit((values) => {
-                        console.log(values)
                         const body = new FormData()
                         const file = files[files.length - 1]
                         body.append("file", file)
-                        console.log(body)
                         fetch(`/api/upload`, {
                             method: "POST",
                             body

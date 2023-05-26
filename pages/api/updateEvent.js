@@ -10,10 +10,7 @@ export default async function handle(req, res) {
     if(!session) {
         res.send({status: 404, message: "Not found"})
     } else {   
-        console.log('hello')
         const body = req.body
-
-        console.log(body)
 
         const event = await prisma.event.update({
             where: {

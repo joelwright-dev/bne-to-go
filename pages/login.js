@@ -8,8 +8,6 @@ export default function Login({ csrfToken }) {
     const { data: session } = useSession()
     const router = useRouter()
 
-    console.log(session)
-
     if(session) {
         router.push('/')
     }
@@ -38,7 +36,7 @@ export default function Login({ csrfToken }) {
                             })
                         }
                     } else {
-                        router.push("/protected")
+                        router.push("/events")
                     }
                 })
             }} autoComplete="off">

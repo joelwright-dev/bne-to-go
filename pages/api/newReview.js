@@ -19,8 +19,6 @@ export default async function handle(req, res) {
             }
         })
 
-        console.log(review.id)
-
         res.send({status: 200, message: req.body.trucks})
     }
 }

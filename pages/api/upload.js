@@ -24,7 +24,6 @@ const uploadForm = next => async (req, res) => {
                 form.once("error", console.error);
 
                 form.on("fileBegin", (name, file) => {
-                    console.log(file)
                     console.log("start uploading: ", file.newFilename);
                 }).on("aborted", () => console.log("Aborted..."));
                 

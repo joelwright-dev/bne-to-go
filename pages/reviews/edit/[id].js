@@ -46,9 +46,6 @@ export default function EditReview({ review, truckData }) {
     const [rating, setRating] = useState(review.rating)
     const router = useRouter()
     const session = useSession()
-    console.log(truckData)
-
-    console.log(truckData.name)
     
     const form = useForm({
         initialValues: {

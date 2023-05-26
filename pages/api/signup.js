@@ -5,13 +5,9 @@ const prisma = new PrismaClient()
 
 export default async function handle(req, res) {
     const users = await prisma.user.findMany()
-    console.log(users)
 
     const username = users.find(user => user.username === req.body.username)
     const email = users.find(user => user.email === req.body.email)
-
-    console.log(username)
-    console.log(email)
 
     if(username == undefined && email == undefined) { 
         bcrypt

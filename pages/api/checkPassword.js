@@ -16,8 +16,6 @@ export default async function handle(req, res) {
                     id: body.id
                 }
             })
-        
-            console.log(user)
             
             if(await bcrypt.compare(body.currentPassword, user.password)) {
                 if(body.username.length > 0 && body.password.length > 0) {

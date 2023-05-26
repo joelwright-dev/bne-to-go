@@ -32,8 +32,6 @@ export async function getServerSideProps(context) {
         }
     })
 
-    console.log(cuisines)
-
     const foodTrucks = foodTruckData.map((truck) => {
         const rating = reviews.find((review) => review.truckId == truck.truck_id)
 
@@ -72,7 +70,7 @@ export default function Home({ foodTrucks, cuisines }) {
     const [orderBy, setOrderBy] = useState("")
 
     if(orderBy !== "") {
-        console.log(foodTrucks.sort((a, b) => b.rating - a.rating))
+        foodTrucks.sort((a, b) => b.rating - a.rating)
     }
     
     return (

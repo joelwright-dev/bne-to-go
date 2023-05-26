@@ -77,8 +77,6 @@ export default function EditEvent({event, foodTrucks, selectedTrucks, selectedAt
     const session = useSession()
     const router = useRouter()
 
-    console.log(event)
-
     const form = useForm({
         initialValues: {
             eventName: event.title,
@@ -119,7 +117,6 @@ export default function EditEvent({event, foodTrucks, selectedTrucks, selectedAt
             return (
                 <Box maw={300} mx="auto">
                     <form onSubmit={form.onSubmit((values) => {
-                        console.log(values)
                         const form = {
                             ...values,
                             organiserId: session.data.user.id,
@@ -127,7 +124,6 @@ export default function EditEvent({event, foodTrucks, selectedTrucks, selectedAt
                             attendees: attendees,
                             id: event.id
                         }
-                        console.log(form)
                         const response = fetch("/api/updateEvent", {
                             method: 'POST',
                             headers: {

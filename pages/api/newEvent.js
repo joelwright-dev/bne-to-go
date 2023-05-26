@@ -40,8 +40,6 @@ export default async function handle(req, res) {
             })
         }
 
-        console.log(event.id)
-
         res.send({status: 200, message: event.id})
     }
 }

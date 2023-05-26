@@ -8,8 +8,6 @@ import { authOptions } from "../api/auth/[...nextauth]";
 export async function getServerSideProps(context) {
     const session = await getServerSession(context.req, context.res, authOptions)
 
-    console.log(session)
-
     if(session) {
         if(session.user.organiser) {
             const events = await prisma.event.findMany({
